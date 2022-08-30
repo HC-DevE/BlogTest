@@ -1,0 +1,22 @@
+
+<%- include partials/header.ejs -%>
+
+<h1>Home</h1>
+<p>
+<%=  startingContent %>
+    
+</p>
+
+    <% posts.forEach(function(post){ %>
+        <h2><%= post.title %></h2>
+        <p><%= post.text.substring(0,100)+ " ..." %> 
+            <!-- <a href="/link">Read more</a> \\ this was an idea for the app.get("/link") but dozsn't work properly yet-->
+            <a href="/posts/<%= post.title %>">Read more</a>
+        </p>
+    <% }) %>
+    <h1>Do you want to tell us something ?</h1>
+    <p> <a href="/compose" class=" btn btn-sm btn-primary">Add a post</a></p>
+
+<%- include partials/footer.ejs -%>
+
+
